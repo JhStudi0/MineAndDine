@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "mineanddine:milk_chocolate"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "mineanddine:milk_chocolate_apple"
+  }
+}

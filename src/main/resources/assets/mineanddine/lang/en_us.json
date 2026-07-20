@@ -1,0 +1,48 @@
+{
+  "item.mineanddine.corn": "Corn Cob",
+  "item.mineanddine.corn_seeds": "Corn Seeds",
+  "item.mineanddine.popcorn": "Popcorn",
+
+  "item.mineanddine.tomato_seeds": "Tomato Seeds",
+  "item.mineanddine.tomato": "Tomato",
+  "item.mineanddine.tomato_sauce": "Tomato Sauce",
+
+  "item.mineanddine.vanilla_seeds": "Vanilla Bean Seeds",
+  "item.mineanddine.vanilla_bean": "Vanilla Bean",
+
+  "item.mineanddine.honey_cookie": "Honey Cookie",
+
+  "item.mineanddine.butter": "Butter",
+
+  "item.mineanddine.poppy_seeds": "Poppy Seeds",
+
+  "item.mineanddine.rice_seeds": "Rice",
+  "item.mineanddine.rice_bowl": "Bowl of Rice",
+
+  "item.mineanddine.milk_chocolate": "Milk Chocolate",
+  "item.mineanddine.dark_chocolate": "Dark Chocolate",
+  "item.mineanddine.white_chocolate": "White Chocolate",
+
+  "item.mineanddine.chocolate_cake": "Chocolate Cake",
+
+  "item.mineanddine.milk_chocolate_apple": "Milk Chocolate covered Apple",
+  "item.mineanddine.dark_chocolate_apple": "Dark Chocolate covered Apple",
+  "item.mineanddine.white_chocolate_apple": "White Chocolate covered Apple",
+
+  "item.mineanddine.rock": "Rock",
+
+  "item.mineanddine.jar": "Jar",
+  "block.mineanddine.yeast_jar": "Jar of Yeast",
+  "item.mineanddine.fermented_yeast_jar": "Jar of Fermented Yeast",
+
+  "item.mineanddine.salt": "Salt",
+  "item.mineanddine.flour": "Flour",
+  "item.mineanddine.bread_dough": "Bread Dough",
+
+  "itemgroup.mineanddine.mine_and_dine_items": "Mine And Dine",
+
+  "block.mineanddine.cooking_pot": "Cooking Pot",
+  "block.mineanddine.corn_grinder": "Corn Grinder",
+
+  "entity.mineanddine.rock": "rock"
+}
