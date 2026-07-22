@@ -2,8 +2,15 @@
 
 ## Setup
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+You can find easy to use .jar files at: https://github.com/JhStudi0/MineAndDineReleases
+Otherwise this project can be downloaded via this repo. You can then open it in any java compatible coding software, the easiest is probably IntelliJ. But I'd highly recommend getting it through the repo above, where you just have to add the corresponding .jar file into your modpack. Further details n how to install it are at: https://github.com/JhStudi0/MineAndDineReleases/blob/main/README.md
 
-## License
+## Content
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+This mod aims to overhaul the Minecraft coking system but so far it is very bare bones.
+It adds a couple of new crops: Rice, tomatoes, corn and vanilla beans.
+It also adds a couple of new block entities like a grinder that can turn wheat into flour and a cooking pot (that doesnt do anything meaningful yet)
+Additionaly it adds a couple of other things, like yeast that ferments when placed or bread dough that can be baked into bread in a furnace.
+
+##Thanks
+Thanks to Juuz for making the implemented inventory that made my custom block creation a lot easier.

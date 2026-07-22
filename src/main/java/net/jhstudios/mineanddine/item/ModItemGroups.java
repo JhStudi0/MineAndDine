@@ -64,6 +64,7 @@ public class ModItemGroups {
 
                         entries.add(ModItems.JAR);
 
+                        entries.add(ModBlocks.PLATE);
                         entries.add(ModBlocks.COOKING_POT);
                         entries.add(ModBlocks.CORN_GRINDER);
 

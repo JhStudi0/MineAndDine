@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.jhstudios.mineanddine.block.ModBlocks;
 import net.jhstudios.mineanddine.block.entity.ModBlockEntities;
 import net.jhstudios.mineanddine.block.entity.renderer.CookingPotBlockEntityRenderer;
+import net.jhstudios.mineanddine.block.entity.renderer.PlateBlockRenderer;
 import net.jhstudios.mineanddine.entity.ModEntities;
 import net.jhstudios.mineanddine.screen.ModScreenHandlers;
 import net.jhstudios.mineanddine.screen.custom.CookingPotScreen;
@@ -31,5 +32,7 @@ public class MineAndDineClient implements ClientModInitializer {
 
         BlockEntityRendererFactories.register(ModBlockEntities.COOKING_POT_BE, CookingPotBlockEntityRenderer::new);
         HandledScreens.register(ModScreenHandlers.COOKING_POT_SCREEN_HANDLER, CookingPotScreen::new);
+
+        BlockEntityRendererFactories.register(ModBlockEntities.PLATE_BE, PlateBlockRenderer::new);
     }
 }

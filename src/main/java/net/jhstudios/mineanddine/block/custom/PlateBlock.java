@@ -1,11 +1,13 @@
 package net.jhstudios.mineanddine.block.custom;
+
 import com.mojang.serialization.MapCodec;
-import net.jhstudios.mineanddine.block.entity.custom.CookingPotBlockEntity;
+import net.jhstudios.mineanddine.block.entity.custom.PlateBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemActionResult;
@@ -17,12 +19,12 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvider {
-    private static final VoxelShape SHAPE =
-            Block.createCuboidShape(1, 0, 1, 15, 8, 15);
-    public static final MapCodec<CookingPotBlock> CODEC = CookingPotBlock.createCodec(CookingPotBlock::new);
+public class PlateBlock extends BlockWithEntity implements BlockEntityProvider {
+    private static final VoxelShape SHAPE = Block.createCuboidShape(1,0,1,15,2,15);
 
-    public CookingPotBlock(Settings settings) {
+    public static final MapCodec<PlateBlock> CODEC = PlateBlock.createCodec(PlateBlock::new);
+
+    public PlateBlock(Settings settings) {
         super(settings);
     }
 
@@ -39,7 +41,7 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
     @Nullable
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new CookingPotBlockEntity(pos, state);
+        return new PlateBlockEntity(pos, state);
     }
 
     @Override
@@ -49,10 +51,10 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
 
     @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if(state.getBlock() != newState.getBlock()) {
+        if (state.getBlock() != newState.getBlock()){
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if(blockEntity instanceof CookingPotBlockEntity) {
-                ItemScatterer.spawn(world, pos, ((CookingPotBlockEntity) blockEntity));
+            if (blockEntity instanceof PlateBlockEntity){
+                ItemScatterer.spawn(world, pos, ((PlateBlockEntity) blockEntity));
                 world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -60,26 +62,23 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
     }
 
     @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
-                                             PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(world.getBlockEntity(pos) instanceof CookingPotBlockEntity cookingPotBlockEntity) {
-            if(cookingPotBlockEntity.isEmpty() && !stack.isEmpty()) {
-                cookingPotBlockEntity.setStack(0, stack.copyWithCount(1));
+    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (world.getBlockEntity(pos) instanceof PlateBlockEntity plateBlockEntity){
+            if (plateBlockEntity.isEmpty() && !stack.isEmpty()){
+                plateBlockEntity.setStack(0, stack.copyWithCount(1));
                 world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 2f);
                 stack.decrement(1);
 
-                cookingPotBlockEntity.markDirty();
+                plateBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if(stack.isEmpty() && !player.isSneaking()) {
-                ItemStack stackOnPot = cookingPotBlockEntity.getStack(0);
-                player.setStackInHand(Hand.MAIN_HAND, stackOnPot);
-                world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f, 1f);
-                cookingPotBlockEntity.clear();
+            }else if (stack.isEmpty() && !player.isSneaking()){
+                ItemStack stackOnPlate = plateBlockEntity.getStack(0);
+                player.setStackInHand(Hand.MAIN_HAND, stackOnPlate);
+                world.playSound(player, pos, SoundEvents.ENTITY_ITEM_PICKUP, SoundCategory.BLOCKS, 1f,1f);
+                plateBlockEntity.clear();
 
-                cookingPotBlockEntity.markDirty();
+                plateBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
-            } else if (player.isSneaking() && !world.isClient()) {
-                player.openHandledScreen(cookingPotBlockEntity);
             }
         }
 
