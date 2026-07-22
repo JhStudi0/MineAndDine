@@ -11,10 +11,10 @@ This mod aims to overhaul the Minecraft coking system but so far it is very bare
 It adds a couple of new crops: Rice, tomatoes, corn and vanilla beans.
 It also adds a couple of new block entities like a grinder that can turn wheat into flour and a cooking pot (that doesnt do anything meaningful yet)
 Additionaly it adds a couple of other things, like yeast that ferments when placed or bread dough that can be baked into bread in a furnace.
-<<<<<<< HEAD
+
 
 ##Thanks
 
 Thanks to Juuz for making the implemented inventory that made my custom block creation a lot easier.
-<<<<<<< HEAD
+
 
