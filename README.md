@@ -14,5 +14,7 @@ Additionaly it adds a couple of other things, like yeast that ferments when plac
 <<<<<<< HEAD
 
 ##Thanks
+
 Thanks to Juuz for making the implemented inventory that made my custom block creation a lot easier.
+<<<<<<< HEAD
 
