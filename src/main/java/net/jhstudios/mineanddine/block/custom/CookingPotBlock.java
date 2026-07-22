@@ -1,12 +1,9 @@
 package net.jhstudios.mineanddine.block.custom;
-
-
 import com.mojang.serialization.MapCodec;
 import net.jhstudios.mineanddine.block.entity.custom.CookingPotBlockEntity;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -22,14 +19,12 @@ import org.jetbrains.annotations.Nullable;
 
 public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvider {
     private static final VoxelShape SHAPE =
-            Block.createCuboidShape(1,0,1,15,8,15);
-
+            Block.createCuboidShape(1, 0, 1, 15, 8, 15);
     public static final MapCodec<CookingPotBlock> CODEC = CookingPotBlock.createCodec(CookingPotBlock::new);
 
     public CookingPotBlock(Settings settings) {
         super(settings);
     }
-
 
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
@@ -54,10 +49,10 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
 
     @Override
     protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
-        if (state.getBlock() != newState.getBlock()){
+        if(state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
-            if (blockEntity instanceof CookingPotBlockEntity){
-                ItemScatterer.spawn(world,pos,((CookingPotBlockEntity) blockEntity));
+            if(blockEntity instanceof CookingPotBlockEntity) {
+                ItemScatterer.spawn(world, pos, ((CookingPotBlockEntity) blockEntity));
                 world.updateComparators(pos, this);
             }
             super.onStateReplaced(state, world, pos, newState, moved);
@@ -65,7 +60,8 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
     }
 
     @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos,
+                                             PlayerEntity player, Hand hand, BlockHitResult hit) {
         if(world.getBlockEntity(pos) instanceof CookingPotBlockEntity cookingPotBlockEntity) {
             if(cookingPotBlockEntity.isEmpty() && !stack.isEmpty()) {
                 cookingPotBlockEntity.setStack(0, stack.copyWithCount(1));
@@ -82,6 +78,8 @@ public class CookingPotBlock extends BlockWithEntity implements BlockEntityProvi
 
                 cookingPotBlockEntity.markDirty();
                 world.updateListeners(pos, state, state, 0);
+            } else if (player.isSneaking() && !world.isClient()) {
+                player.openHandledScreen(cookingPotBlockEntity);
             }
         }
 

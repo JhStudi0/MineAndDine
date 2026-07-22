@@ -8,6 +8,7 @@ import net.jhstudios.mineanddine.block.entity.ModBlockEntities;
 import net.jhstudios.mineanddine.entity.ModEntities;
 import net.jhstudios.mineanddine.item.ModItemGroups;
 import net.jhstudios.mineanddine.item.ModItems;
+import net.jhstudios.mineanddine.screen.ModScreenHandlers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,6 +25,7 @@ public class MineAndDine implements ModInitializer {
 
         ModEntities.registerModEntities();
         ModBlockEntities.registerBlockEntities();
+        ModScreenHandlers.registerScreenHandlers();
 
         CornGrinderBlock.registerRecipes();
     }

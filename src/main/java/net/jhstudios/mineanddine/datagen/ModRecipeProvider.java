@@ -10,6 +10,7 @@ import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Recipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
@@ -37,6 +38,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         List<ItemConvertible> BREAD_DOUGH = List.of(ModItems.BREAD_DOUGH);
 
         offerSmelting(exporter, BREAD_DOUGH, RecipeCategory.FOOD, Items.BREAD, 0.25f, 400, "bread_dough");
+
+
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.CORN_SEEDS, 2)
                 .input(ModItems.CORN)
@@ -112,6 +115,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModItems.WHITE_CHOCOLATE), conditionsFromItem(ModItems.WHITE_CHOCOLATE))
                 .offerTo(exporter);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.SUSHI_COD,4)
+                .input(Items.DRIED_KELP)
+                .input(ModItems.RICE_BOWL)
+                .input(Items.COD)
+                .criterion(hasItem(ModItems.RICE_BOWL), conditionsFromItem(ModItems.RICE_BOWL))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.SUSHI_SALMON, 4)
+                .input(Items.DRIED_KELP)
+                .input(ModItems.RICE_BOWL)
+                .input(Items.SALMON)
+                .criterion(hasItem(ModItems.RICE_BOWL), conditionsFromItem(ModItems.RICE_BOWL))
+                .offerTo(exporter);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, ModItems.ONIGIRI, 4)
+                .input(Items.DRIED_KELP)
+                .input(ModItems.RICE_BOWL)
+                .criterion(hasItem(ModItems.RICE_BOWL), conditionsFromItem(ModItems.RICE_BOWL))
+                .offerTo(exporter);
 
 
 

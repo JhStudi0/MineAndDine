@@ -18,6 +18,9 @@
 
   "item.mineanddine.rice_seeds": "Rice",
   "item.mineanddine.rice_bowl": "Bowl of Rice",
+  "item.mineanddine.sushi_cod": "Cod Sushi",
+  "item.mineanddine.sushi_salmon": "Salmon Sushi",
+  "item.mineanddine.onigiri": "Onigiri",
 
   "item.mineanddine.milk_chocolate": "Milk Chocolate",
   "item.mineanddine.dark_chocolate": "Dark Chocolate",
@@ -38,6 +41,8 @@
   "item.mineanddine.salt": "Salt",
   "item.mineanddine.flour": "Flour",
   "item.mineanddine.bread_dough": "Bread Dough",
+
+  "item.mineanddine.chicken_leg": "Chicken Leg",
 
   "itemgroup.mineanddine.mine_and_dine_items": "Mine And Dine",
 

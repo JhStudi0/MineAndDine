@@ -30,10 +30,15 @@ public class ModItemGroups {
                         entries.add(ModItems.VANILLA_BEAN);
                         entries.add(ModItems.VANILLA_SEEDS);
 
+                        entries.add(ModItems.CHICKEN_LEG);
+
                         entries.add(ModItems.POPPY_SEEDS);
 
                         entries.add(ModItems.RICE_SEEDS);
                         entries.add(ModItems.RICE_BOWL);
+                        entries.add(ModItems.SUSHI_COD);
+                        entries.add(ModItems.SUSHI_SALMON);
+                        entries.add(ModItems.ONIGIRI);
 
                         entries.add(ModItems.HONEY_COOKIE);
 

@@ -13,7 +13,7 @@ public class ModFoodComponents {
     public static final FoodComponent TOMATO = new FoodComponent.Builder().nutrition(3).saturationModifier(0.25f)
             .build();
 
-    public static final FoodComponent TOMATO_SAUCE = new FoodComponent.Builder().nutrition(5).saturationModifier(0.3f)
+    public static final FoodComponent TOMATO_SAUCE = new FoodComponent.Builder().nutrition(4).saturationModifier(0.3f)
             .build();
 
     public static final FoodComponent HONEY_COOKIE = new FoodComponent.Builder().nutrition(3).saturationModifier(0.3f)
@@ -30,11 +30,18 @@ public class ModFoodComponents {
             .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 100, 1),1.0f)
             .build();
 
-    public static final FoodComponent CHOCOLATE_APPLE = new FoodComponent.Builder().nutrition(5).saturationModifier(2.5f)
+    public static final FoodComponent CHOCOLATE_APPLE = new FoodComponent.Builder().nutrition(4).saturationModifier(2.5f)
             .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 100, 1),1.0f)
             .build();
 
     public static final FoodComponent BREAD_DOUGH = new FoodComponent.Builder().nutrition(4).saturationModifier(0.4f)
             .statusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 100, 1),0.25f)
+            .build();
+
+    public static final FoodComponent SUSHI = new FoodComponent.Builder().nutrition(5).saturationModifier(2f)
+            .build();
+
+    public static final FoodComponent CHICKEN_LEG = new FoodComponent.Builder().nutrition(5).saturationModifier(2f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.POISON, 500, 1), 0.25f)
             .build();
 }

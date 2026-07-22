@@ -97,6 +97,18 @@ public class ModItems {
     public static final Item BREAD_DOUGH = registerItem("bread_dough", new JarFoodItem(new Item.Settings()
             .food(ModFoodComponents.BREAD_DOUGH)));
 
+    public static final Item SUSHI_COD = registerItem("sushi_cod", new Item(new Item.Settings()
+            .food(ModFoodComponents.SUSHI)));
+
+    public static final Item SUSHI_SALMON = registerItem("sushi_salmon", new Item(new Item.Settings()
+            .food(ModFoodComponents.SUSHI)));
+
+    public static final Item ONIGIRI = registerItem("onigiri", new Item(new Item.Settings()
+            .food(ModFoodComponents.SUSHI)));
+
+    public static final Item CHICKEN_LEG = registerItem("chicken_leg", new Item(new Item.Settings()
+            .food(ModFoodComponents.CHICKEN_LEG)));
+
 
     public static void registerModItems() {
         MineAndDine.LOGGER.info("Registering Mod Items for " + MineAndDine.MOD_ID);

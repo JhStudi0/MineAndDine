@@ -57,6 +57,8 @@ public class ModBlocks {
     public static final Block COOKING_POT = registerBlock("cooking_pot",
             new CookingPotBlock(AbstractBlock.Settings.create().nonOpaque()));
 
+
+
     public static final Block CORN_GRINDER = registerBlock("corn_grinder",
             new CornGrinderBlock(AbstractBlock.Settings.create().nonOpaque()));
 
