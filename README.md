@@ -13,7 +13,7 @@ It also adds a couple of new block entities like a grinder that can turn wheat i
 Additionaly it adds a couple of other things, like yeast that ferments when placed or bread dough that can be baked into bread in a furnace.
 
 
-##Thanks
+## Thanks
 
 Thanks to Juuz for making the implemented inventory that made my custom block creation a lot easier.
 
